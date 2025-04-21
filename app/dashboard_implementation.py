@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 from flask import Flask
 
 # Import the dashboard design
-from dashboard_design import DashboardDesign
+from app.dashboard_design import DashboardDesign
 
 # Create a class for the dashboard implementation
 class DashboardImplementation:
