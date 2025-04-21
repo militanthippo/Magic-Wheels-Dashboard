@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "type": "web",
+      "name": "magic-wheels-dashboard",
+      "env": "python",
+      "buildCommand": "pip install -r requirements.txt",
+      "startCommand": "gunicorn app:app",
+      "envVars": [
+        {
+          "key": "GHL_CLIENT_ID",
+          "value": "68065d1e5068cea05378c233-m9r8sxby"
+        },
+        {
+          "key": "GHL_CLIENT_SECRET",
+          "value": "d0e56355-d952-473a-b4ec-3362904bed2a"
+        },
+        {
+          "key": "GHL_REDIRECT_URI",
+          "value": "https://magic-wheels-dashboard.onrender.com/callback"
+        },
+        {
+          "key": "REFRESH_INTERVAL",
+          "value": "hourly"
+        },
+        {
+          "key": "PYTHON_VERSION",
+          "value": "3.10.12"
+        }
+      ],
+      "autoDeploy": "true"
+    },
+    {
+      "type": "worker",
+      "name": "magic-wheels-refresh",
+      "env": "python",
+      "buildCommand": "pip install -r requirements.txt",
+      "startCommand": "python -m app.data_refresh --action start --interval hourly",
+      "envVars": [
+        {
+          "key": "GHL_CLIENT_ID",
+          "value": "68065d1e5068cea05378c233-m9r8sxby"
+        },
+        {
+          "key": "GHL_CLIENT_SECRET",
+          "value": "d0e56355-d952-473a-b4ec-3362904bed2a"
+        },
+        {
+          "key": "GHL_REDIRECT_URI",
+          "value": "https://magic-wheels-dashboard.onrender.com/callback"
+        },
+        {
+          "key": "REFRESH_INTERVAL",
+          "value": "hourly"
+        },
+        {
+          "key": "PYTHON_VERSION",
+          "value": "3.10.12"
+        }
+      ],
+      "autoDeploy": "true"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "GHL_CLIENT_ID": "68065d1e5068cea05378c233-m9r8sxby",
+    "GHL_CLIENT_SECRET": "d0e56355-d952-473a-b4ec-3362904bed2a",
+    "GHL_REDIRECT_URI": "https://magic-wheels-dashboard.vercel.app/callback",
+    "REFRESH_INTERVAL": "hourly"
+  }
+}

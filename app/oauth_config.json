@@ -1,0 +1,13 @@
+{
+  "client_id": "68065d1e5068cea05378c233-m9r8sxby",
+  "client_secret": "d0e56355-d952-473a-b4ec-3362904bed2a",
+  "redirect_uri": "https://magic-wheels-dashboard.onrender.com/callback",
+  "auth_url": "https://marketplace.gohighlevel.com/oauth/authorize",
+  "token_url": "https://services.leadconnectorhq.com/oauth/token",
+  "scope": [
+    "locations.readonly",
+    "opportunities.readonly",
+    "contacts.readonly"
+  ],
+  "token_storage": "database"
+}
